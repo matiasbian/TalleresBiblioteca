@@ -9,7 +9,7 @@
         public $edad = 0;
         public $FechaInscr = 0;
 
-       public function __construct ($_nombre, $_apellido,$_legajo,$_domicilio,$_telefono,$_taller,$_edad){
+       public function __construct ($_legajo,$_apellido,$_nombre,$_domicilio,$_telefono,$_taller,$_edad){
             $this->nombre = $_nombre;
             $this->apellido = $_apellido;
             $this->legajo  = $_legajo;
@@ -21,5 +21,7 @@
         }
 
     }
+
+
 
 ?>
