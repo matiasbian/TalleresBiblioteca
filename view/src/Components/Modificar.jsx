@@ -3,6 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
+import GetTalleres from './Subcomponents/GetTalleres'
 export default class Modificar extends React.Component{
 
     constructor(props){
@@ -58,11 +59,8 @@ export default class Modificar extends React.Component{
                         </div>
                         <div className="form-group col-md-4">
                         <label htmlFor="inputTaller">Taller</label>
-                        <select onChange={this.actualizarValores} value = {this.state.taller} name="taller" id="inputTaller" className="form-control">
-                            <option defaultValue>Taller</option>
-                            <option >Taller2</option>
-                            {/*optionstalleres*/}
-                        </select>
+                        <GetTalleres valor="0" ></GetTalleres>
+
                         </div>
                         <div className="form-group col-md-2">
                         <label htmlFor="inputEdad">Edad</label>

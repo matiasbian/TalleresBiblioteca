@@ -3,15 +3,20 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
+import Filas from './Subcomponents/Filas'
 export default class Talleres extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
-            taller:  ""
+            taller:  "Taller2",
+            filas : []
         }
         this.actualizarValores = this.actualizarValores.bind(this);
+        this.buscar = this.buscar.bind(this);
     }
+
+   
 
     render(){
         return (
@@ -22,9 +27,9 @@ export default class Talleres extends React.Component{
                             <option >Taller2</option>
                             {/*optionstalleres*/}
                         </select>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="reset" onClick={this.buscar}>Buscar</button>
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={this.buscar}>Buscar</button>
                 </div>
-                <table class="table">
+                <table className="table">
                     <thead>
                         <tr>
                         <th scope="col">#Legajo</th>
@@ -37,12 +42,7 @@ export default class Talleres extends React.Component{
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
+                        <Filas filas={this.state.filas}></Filas>
                     </tbody>
                 </table>
             </div>
@@ -57,6 +57,13 @@ export default class Talleres extends React.Component{
         this.setState({
         [name]: value
         });
+    }
+
+
+    buscar(){
+        axios.get("http://localhost/TalleresBiblioteca/Model/buscarTaller.php?taller=" + this.state.taller)
+        .then( res => this.setState({ filas : res.data}))
+        .catch(e => console.log(e))
     }
 
 }
