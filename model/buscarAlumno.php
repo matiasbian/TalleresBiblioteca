@@ -8,7 +8,10 @@
 
     if (isset($_GET['id'])) {
         $id =  $_GET['id'];
-        $consulta = "SELECT * FROM alumnos WHERE legajo = $id ";
+        $consulta = "SELECT * FROM alumnos
+                        JOIN talleres
+                        ON alumnos.taller = talleres.nombre
+                        WHERE legajo = $id ";
         $result = $mysqli->query($consulta);
 
         if ($result->num_rows > 0) {

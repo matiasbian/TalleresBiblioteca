@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Agregar from './Agregar'
 import Modificar from './Modificar'
 import Talleres from './Talleres'
+import Comprobantes from './Comprobantes';
 
 export default class NavBar extends React.Component{
     constructor(props){
@@ -38,7 +39,7 @@ export default class NavBar extends React.Component{
                             <a className="nav-link" href="#" onClick = { () => this.props.setC(<Talleres></Talleres>) }>Talleres</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Comprobantes</a>
+                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Comprobantes></Comprobantes>) }>Comprobantes</a>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
