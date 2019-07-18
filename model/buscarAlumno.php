@@ -10,7 +10,7 @@
         $id =  $_GET['id'];
         $consulta = "SELECT * FROM alumnos
                         JOIN talleres
-                        ON alumnos.taller = talleres.nombre
+                        ON alumnos.taller = talleres.nombreT
                         WHERE legajo = $id ";
         $result = $mysqli->query($consulta);
 

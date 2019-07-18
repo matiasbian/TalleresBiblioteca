@@ -20,8 +20,8 @@ export default class GetTalleres extends React.Component {
     render(){
         return ( 
             <select onChange={this.props.func} name="taller" id="inputTaller" className="form-control">
-                 <option defaultValue>Taller</option>
-                { this.state.opciones.map( (x,i) => <option key={i}> {x.nombre} </option>)  }    
+                 <option defaultValue> { (this.props.selec) ? this.props.selec : "Taller"}</option>
+                { this.state.opciones.map( (x,i) => <option key={i}> {x.nombreT} </option>)  }    
             </select>
         );
     }

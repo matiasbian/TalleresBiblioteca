@@ -53,7 +53,7 @@ export default class Agregar extends React.Component{
                         </div>
                         <div className="form-group col-md-4">
                         <label htmlFor="inputTaller">Taller</label>
-                        <GetTalleres valor="0" ></GetTalleres>
+                        <GetTalleres func={this.actualizarValores} valor="0" ></GetTalleres>
                         </div>
                         <div className="form-group col-md-2">
                         <label htmlFor="inputEdad">Edad</label>
@@ -78,7 +78,11 @@ export default class Agregar extends React.Component{
 
     enviar(event){
         axios.post("http://localhost/TalleresBiblioteca/Model/agregarAlumno.php",this.state)
-        .then( res => console.log(res))
+        .then( res => {
+            console.log(res);
+            alert("Agregado Exitosamente");
+            window.location.reload();
+        })
         .catch(e => console.log(e))
         event.preventDefault();
     }

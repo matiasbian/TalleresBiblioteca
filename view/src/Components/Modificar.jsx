@@ -59,7 +59,7 @@ export default class Modificar extends React.Component{
                         </div>
                         <div className="form-group col-md-4">
                         <label htmlFor="inputTaller">Taller</label>
-                        <GetTalleres valor="0" ></GetTalleres>
+                        <GetTalleres func={this.actualizarValores} selec={this.state.taller} valor="0" ></GetTalleres>
 
                         </div>
                         <div className="form-group col-md-2">
@@ -85,14 +85,17 @@ export default class Modificar extends React.Component{
 
     enviar(event){
         axios.post("http://localhost/TalleresBiblioteca/Model/modificarAlumno.php",this.state)
-        .then( res => console.log(res))
+        .then( res => {
+            alert("Modificado Exitosamente");
+            window.location.reload();
+        })
         .catch(e => console.log(e))
         event.preventDefault();
     }
 
     buscar(){
         axios.get("http://localhost/TalleresBiblioteca/Model/buscarAlumno.php?id=" + this.state.buscar)
-        .then( res => 
+        .then( res => {
             this.setState( {
                 legajo : res.data.legajo,
                 apellido : res.data.apellido,
@@ -102,8 +105,9 @@ export default class Modificar extends React.Component{
                 taller : res.data.taller,
                 edad : res.data.edad
             })
+            console.log(res);
          
-        )
+        })
         .catch(e => console.log(e))
     }
     

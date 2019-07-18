@@ -6,6 +6,7 @@ import Agregar from './Agregar'
 import Modificar from './Modificar'
 import Talleres from './Talleres'
 import Comprobantes from './Comprobantes';
+import ModifTalleres from './ModifTalleres';
 
 export default class NavBar extends React.Component{
     constructor(props){
@@ -30,7 +31,7 @@ export default class NavBar extends React.Component{
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Agregar></Agregar>) }>Agregar </a>
+                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Agregar ></Agregar>) }>Agregar </a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#" onClick = { () => this.props.setC(<Modificar></Modificar>) }>Modificar</a>
@@ -40,6 +41,9 @@ export default class NavBar extends React.Component{
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#" onClick = { () => this.props.setC(<Comprobantes></Comprobantes>) }>Comprobantes</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<ModifTalleres></ModifTalleres>) }>Modificar talleres</a>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">

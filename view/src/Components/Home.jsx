@@ -7,7 +7,9 @@ export default class Home extends React.Component{
 
     constructor(props){
         super(props)
-        this.state = {comp : null}
+        this.state = {
+            comp : null
+        }
         this.setComponent = this.setComponent.bind(this);
     }
 

@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
 import Filas from './Subcomponents/Filas'
+import GetTalleres from './Subcomponents/GetTalleres';
+import PrintProvider, { NoPrint, Print } from 'react-easy-print';
 export default class Talleres extends React.Component{
 
     constructor(props){
@@ -20,32 +22,40 @@ export default class Talleres extends React.Component{
 
     render(){
         return (
-            <div className="container">
-                <div className="form-inline my-2 my-lg-0">
-                        <select onChange={this.actualizarValores} value = {this.state.taller} name="taller" id="inputTaller" className="form-control">
-                            <option defaultValue>Taller</option>
-                            <option >Taller2</option>
-                            {/*optionstalleres*/}
-                        </select>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={this.buscar}>Buscar</button>
+            <PrintProvider>
+                <div className="container">
+                    <NoPrint>
+                        <div className="form-inline my-2 my-lg-0">
+                            <GetTalleres func={this.actualizarValores} valor="0"></GetTalleres>
+                            <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={this.buscar}>Buscar</button>
+                        </div>
+                    </NoPrint>
+                    <Print printOnly>
+                        <h2>{ "Taller de " + this.state.taller }</h2>
+                   </Print>
+                    <Print>
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#Legajo</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Domicilio</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Taller</th>
+                                <th scope="col">Edad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <Filas filas={this.state.filas}></Filas>
+                            </tbody>
+                        </table>
+                    </Print>
+                    <Print printOnly>
+                        <p>{new Date().toLocaleString()}</p>
+                   </Print>
                 </div>
-                <table className="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#Legajo</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Domicilio</th>
-                        <th scope="col">Teléfono</th>
-                        <th scope="col">Taller</th>
-                        <th scope="col">Edad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <Filas filas={this.state.filas}></Filas>
-                    </tbody>
-                </table>
-            </div>
+            </PrintProvider>
           );
     }
 

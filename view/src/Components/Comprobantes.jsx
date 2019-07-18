@@ -3,7 +3,9 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
-import GetTalleres from './Subcomponents/GetTalleres'
+import GetTalleres from './Subcomponents/GetTalleres';
+import ContainerComprobantes from './Subcomponents/ContainerComprobantes';
+import PrintProvider, { Print, NoPrint } from 'react-easy-print';
 export default class Comprobantes extends React.Component{
 
     constructor(props){
@@ -17,60 +19,36 @@ export default class Comprobantes extends React.Component{
             taller : "",
             edad : 0,
             buscar : "",
-            valor : 10
+            valor : 10,
+            duplicado : false
         }
         this.actualizarValores = this.actualizarValores.bind(this);
-        this.enviar = this.enviar.bind(this);
         this.buscar = this.buscar.bind(this);
+        this.duplicar = this.duplicar.bind(this);
     }
 
     render(){
         return (
-            <div className = "container">
-                <form onSubmit={this.enviar}>
-                    <h1>Modificar inscripto</h1>
-                    <div className="form-inline my-2 my-lg-0">
-                        <input onChange={this.actualizarValores} name = "buscar" className="form-control mr-sm-2" type="search" placeholder="Introduzca n° de legajo" aria-label="Search"></input>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="reset" onClick={this.buscar}>Buscar</button>
-                    </div>
-                    <div className="form-group">
-                        <div className="form-group">
-                            <label htmlFor="inputLegajo">N° Legajo</label>
-                            <label name = "legajo" className="form-control" id="inputLegajo" placeholder="Legajo">{this.state.legajo} </label>
+            <PrintProvider>
+                <div className = "container">
+                    <h1>Comprobantes</h1>
+                    <NoPrint>
+                        <div className="form-inline my-2 my-lg-0">
+                            <input id="busqueda" onChange={this.actualizarValores} name = "buscar" className="form-control mr-sm-2" type="search" placeholder="Introduzca n° de legajo" aria-label="Search"></input>
+                            <button className="btn btn-outline-success my-2 my-sm-0" type="reset" onClick={this.buscar}>Buscar</button>
                         </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="inputApellido">Apellido</label>
-                            <label name="apellido" type="text" className="form-control" id="inputApellido" placeholder="Apellido">{this.state.apellido}</label>
-                        </div>
-                        <div className="form-group col-md-6">
-                            <label htmlFor="inputNombre">Nombre</label>
-                            <label name="nombre" type="text" className="form-control" id="inputNombre" placeholder="Nombre">{this.state.nombre}</label>
-                        </div>
-                    </div>
-                    <div className="form-row">
-                        <div className="form-group col-md-6">
-                            <label htmlFor="inputTaller">Taller</label>
-                            <label name="nombre" type="text" className="form-control" id="inputNombre" placeholder="Nombre">{this.state.taller}</label>
-                        </div>
-                        <div className="form-group col-md-6">
-                            <label htmlFor="inputConcepto">Concepto</label>
-                            <select onChange={this.props.actualizarValores} name="taller" id="inputTaller" className="form-control">
-                                <option defaultValue>Inscripción</option>
-                                <option>Cuota Mensual</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="form-group">
-                            <label htmlFor="inputValor">Valor</label>
-                            <label name = "legajo" type="number" className="form-control" id="inputLegajo" placeholder="Legajo">{this.state.valor}</label>
-                        </div>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Modificar</button>
-                </form>
-            </div>
+                   </NoPrint>
+                   <ContainerComprobantes datos={this.state}></ContainerComprobantes>
+                   <Print printOnly>
+                    <ContainerComprobantes datos={this.state}></ContainerComprobantes>
+                   </Print>
+                   
+                    <NoPrint>
+                            <button type="button" className="btn btn-primary" onClick={ window.print}>Imprimir</button>
+                    </NoPrint>
+                </div>
+            </PrintProvider>
+            
           );
     }
 
@@ -84,12 +62,6 @@ export default class Comprobantes extends React.Component{
         });
     }
 
-    enviar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/modificarAlumno.php",this.state)
-        .then( res => console.log(res))
-        .catch(e => console.log(e))
-        event.preventDefault();
-    }
 
     buscar(){
         axios.get("http://localhost/TalleresBiblioteca/Model/buscarAlumno.php?id=" + this.state.buscar)
@@ -108,6 +80,20 @@ export default class Comprobantes extends React.Component{
         )
         .catch(e => console.log(e))
     }
+
+    duplicar(){
+        this.setState({ duplicado : !this.state.duplicado})
+    }
     
   
 }
+
+const ColoredLine = ({ color }) => (
+    <hr
+        style={{
+            color: color,
+            backgroundColor: color,
+            height: 3
+        }}
+    />
+);

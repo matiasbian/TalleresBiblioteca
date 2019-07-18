@@ -10,9 +10,9 @@
         $valor =  $_GET['valor'];
         $consulta = "";
         if ($valor == 1){
-            $consulta = "SELECT nombre,valor FROM talleres ";
+            $consulta = "SELECT nombreT,valor FROM talleres ";
         }else{
-            $consulta = "SELECT nombre FROM talleres  ";
+            $consulta = "SELECT nombreT FROM talleres  ";
         }
         $result = $mysqli->query($consulta);
         $rows = array();
