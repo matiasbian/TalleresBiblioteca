@@ -1,6 +1,4 @@
 import React from 'react';
-import App from '../../App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import axios from 'axios';
 
 export default class GetTalleres extends React.Component {

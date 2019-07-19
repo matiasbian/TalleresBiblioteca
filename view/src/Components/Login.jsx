@@ -2,6 +2,8 @@ import React from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import cookie from 'react-cookies'
+
 export default class Login extends React.Component{
 
     constructor(props){
@@ -25,17 +27,21 @@ export default class Login extends React.Component{
     }
 
     enviar (event){
+ 
+  
         event.preventDefault();
         axios.post('http://localhost/TalleresBiblioteca/model/login.php',{ usuario : this.state.valorUsuario, password : this.state.valorPassword })
         .then(resp => {
-            this.props.history.push('/home',resp.data);
+            cookie.save('username', this.state.valorUsuario, { path: '/' })
+            this.props.history.push('/home');
         })
         .catch( e => {
-            console.log("Usuario y/o contraseña incorrecto/s");
+            alert ("Usuario y/o contraseña incorrecta/s");
         })
     }
 
     render(){
+        
         return (
             <div className="container">
                 <h1 id="titulo">Biblioteca Sarmiento</h1>

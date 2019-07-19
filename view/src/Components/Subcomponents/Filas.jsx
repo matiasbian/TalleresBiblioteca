@@ -1,7 +1,5 @@
 import React from 'react';
-import App from '../../App.css';
 import Columnas from './Columnas'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default class Filas extends React.Component {
     render(){

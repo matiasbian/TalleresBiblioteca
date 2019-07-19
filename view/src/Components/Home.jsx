@@ -1,14 +1,13 @@
 import React from 'react';
 import '../App.css';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
+import Agregar from './Agregar';
 export default class Home extends React.Component{
 
     constructor(props){
         super(props)
         this.state = {
-            comp : null
+            comp : <Agregar></Agregar>
         }
         this.setComponent = this.setComponent.bind(this);
     }

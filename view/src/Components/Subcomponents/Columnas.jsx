@@ -1,6 +1,5 @@
 import React from 'react';
-import App from '../../App.css';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 
 export default class Columnas extends React.Component {
     constructor(props){
