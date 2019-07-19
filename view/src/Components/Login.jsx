@@ -30,7 +30,7 @@ export default class Login extends React.Component{
  
   
         event.preventDefault();
-        axios.post('http://localhost/TalleresBiblioteca/model/login.php',{ usuario : this.state.valorUsuario, password : this.state.valorPassword })
+        axios.post('http://bibliotecasarmiento.esy.es/login.php',{ usuario : this.state.valorUsuario, password : this.state.valorPassword })
         .then(resp => {
             cookie.save('username', this.state.valorUsuario, { path: '/' })
             this.props.history.push('/home');

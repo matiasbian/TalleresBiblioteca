@@ -10,7 +10,7 @@ export default class GetTalleres extends React.Component {
     }
 
     componentDidMount(){
-        axios.get("http://localhost/TalleresBiblioteca/Model/getTalleres.php?valor=" + this.props.valor)
+        axios.get("http://bibliotecasarmiento.esy.es/getTalleres.php?valor=" + this.props.valor)
         .then( res => this.setState({ opciones : res.data}))
         .catch(e => console.log(e))
     }

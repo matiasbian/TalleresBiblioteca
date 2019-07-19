@@ -77,7 +77,7 @@ export default class Agregar extends React.Component{
     }
 
     enviar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/agregarAlumno.php",this.state)
+        axios.post("http://bibliotecasarmiento.esy.es/agregarAlumno.php",this.state)
         .then( res => {
             console.log(res);
             alert("Agregado Exitosamente");

@@ -64,7 +64,7 @@ export default class Comprobantes extends React.Component{
 
 
     buscar(){
-        axios.get("http://localhost/TalleresBiblioteca/Model/buscarAlumno.php?id=" + this.state.buscar)
+        axios.get("http://bibliotecasarmiento.esy.es/buscarAlumno.php?id=" + this.state.buscar)
         .then( res => 
             this.setState( {
                 legajo : res.data.legajo,

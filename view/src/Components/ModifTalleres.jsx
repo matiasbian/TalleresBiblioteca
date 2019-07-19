@@ -78,7 +78,7 @@ export default class ModifTalleres extends React.Component{
     }
 
     agregar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/agregartaller.php",this.state)
+        axios.post("http://bibliotecasarmiento.esy.es/agregartaller.php",this.state)
         .then( res => {
             console.log(res);
             alert("Taller agregado correctamente");
@@ -89,7 +89,7 @@ export default class ModifTalleres extends React.Component{
     }
 
     modificar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/modificartaller.php",this.state)
+        axios.post("http://bibliotecasarmiento.esy.es/modificartaller.php",this.state)
         .then( res => {
             console.log(res);
             alert("Taller modificado correctamente");
@@ -100,7 +100,7 @@ export default class ModifTalleres extends React.Component{
     }
 
     borrar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/borrartaller.php",this.state)
+        axios.post("http://bibliotecasarmiento.esy.es/borrartaller.php",this.state)
         .then( res => {
             console.log(res);
             alert("Taller eliminado correctamente");

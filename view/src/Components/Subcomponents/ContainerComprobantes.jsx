@@ -71,14 +71,14 @@ export default class Comprobantes extends React.Component{
     }
 
     enviar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/modificarAlumno.php",this.state)
+        axios.post("http://bibliotecasarmiento.esy.es/modificarAlumno.php",this.state)
         .then( res => console.log(res))
         .catch(e => console.log(e))
         event.preventDefault();
     }
 
     buscar(){
-        axios.get("http://localhost/TalleresBiblioteca/Model/buscarAlumno.php?id=" + this.props.datos.buscar)
+        axios.get("http://bibliotecasarmiento.esy.es/buscarAlumno.php?id=" + this.props.datos.buscar)
         .then( res => 
             this.setState( {
                 legajo : res.data.legajo,

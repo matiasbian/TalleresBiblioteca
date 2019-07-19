@@ -84,7 +84,7 @@ export default class Modificar extends React.Component{
     }
 
     enviar(event){
-        axios.post("http://localhost/TalleresBiblioteca/Model/modificarAlumno.php",this.state)
+        axios.post("http://bibliotecasarmiento.esy.es/modificarAlumno.php",this.state)
         .then( res => {
             alert("Modificado Exitosamente");
             window.location.reload();
@@ -94,7 +94,7 @@ export default class Modificar extends React.Component{
     }
 
     buscar(){
-        axios.get("http://localhost/TalleresBiblioteca/Model/buscarAlumno.php?id=" + this.state.buscar)
+        axios.get("http://bibliotecasarmiento.esy.es/buscarAlumno.php?id=" + this.state.buscar)
         .then( res => {
             this.setState( {
                 legajo : res.data.legajo,

@@ -71,7 +71,7 @@ export default class Talleres extends React.Component{
 
 
     buscar(){
-        axios.get("http://localhost/TalleresBiblioteca/Model/buscarTaller.php?taller=" + this.state.taller)
+        axios.get("http://bibliotecasarmiento.esy.es/buscarTaller.php?taller=" + this.state.taller)
         .then( res => this.setState({ filas : res.data}))
         .catch(e => console.log(e))
     }
