@@ -61,7 +61,7 @@ export default class Login extends React.Component{
                             <label htmlFor="inputPassword">Contraseña</label>
                         </div>
            
-                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Sign in</button>
+                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Entrar</button>
                         <hr className="my-4"></hr>
                         </form>
                     </div>
