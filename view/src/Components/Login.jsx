@@ -59,7 +59,11 @@ export default class Login extends React.Component{
                             <input  type="password" id="inputPassword" className="form-control" placeholder="Contraseña" required value={this.state.valorPassword} onChange={this.cambioValorPass}></input>
                         </div>
            
+<<<<<<< HEAD
                         <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Ingresar</button>
+=======
+                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Entrar</button>
+>>>>>>> c594f40f8ff1ea0bf3531090c634a79cae62f818
                         <hr className="my-4"></hr>
                         </form>
                     </div>

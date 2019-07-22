@@ -41,19 +41,19 @@ export default class NavBar extends React.Component{
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Agregar ></Agregar>) }>Agregar </a>
+                            <button type="button" id="botNav" className="btn btn-dark" onClick = { () => this.props.setC(<Agregar></Agregar>) }>Agregar</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Modificar></Modificar>) }>Modificar</a>
+                            <button type="button" id="botNav" className="btn btn-dark" onClick = { () => this.props.setC(<Modificar></Modificar>) }>Modificar</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Talleres></Talleres>) }>Talleres</a>
+                            <button type="button" id="botNav" className="btn btn-dark" onClick = { () => this.props.setC(<Talleres></Talleres>) }>Talleres</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<Comprobantes></Comprobantes>) }>Comprobantes</a>
+                            <button type="button" id="botNav" className="btn btn-dark" onClick = { () => this.props.setC(<Comprobantes></Comprobantes>) }>Comprobantes</button>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" onClick = { () => this.props.setC(<ModifTalleres></ModifTalleres>) }>Modificar talleres</a>
+                            <button type="button" id="botNav" className="btn btn-dark" onClick = { () => this.props.setC(<ModifTalleres></ModifTalleres>) }>Modificar talleres</button>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
