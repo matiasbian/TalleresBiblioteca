@@ -47,9 +47,9 @@ export default class Login extends React.Component{
                 <h1 id="titulo">Biblioteca Sarmiento</h1>
                 <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                    <div className="card card-signin my-5">
+                    <div id="cardlog" className="card card-signin my-5">
                     <div className="card-body">
-                        <h5 id="sublog" className="card-title text-center">Ingresar</h5>
+                        <h5 id="sublog" className="card-title text-center">Iniciar Sesion</h5>
                         <form className="form-signin" onSubmit={this.enviar}>
                         <div id="inputlog" className="form-label-group">
                             <input id="inputlog" type="text" id="inputEmail" className="form-control" placeholder="Usuario" required autoFocus value={this.state.valorUsuario} onChange={this.cambioValorUser}></input>
@@ -59,11 +59,7 @@ export default class Login extends React.Component{
                             <input  type="password" id="inputPassword" className="form-control" placeholder="Contraseña" required value={this.state.valorPassword} onChange={this.cambioValorPass}></input>
                         </div>
            
-<<<<<<< HEAD
-                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Ingresar</button>
-=======
                         <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Entrar</button>
->>>>>>> c594f40f8ff1ea0bf3531090c634a79cae62f818
                         <hr className="my-4"></hr>
                         </form>
                     </div>

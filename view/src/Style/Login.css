@@ -10,3 +10,8 @@
 #inputlog{
     padding-bottom: 5%;
 }
+#cardlog{
+    border-radius: 5%;
+    border-color: black;
+    border-style: inset
+}
