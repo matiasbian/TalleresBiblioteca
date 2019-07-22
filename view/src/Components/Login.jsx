@@ -55,7 +55,7 @@ export default class Login extends React.Component{
                             <input id="inputlog" type="text" id="inputEmail" className="form-control" placeholder="Usuario" required autoFocus value={this.state.valorUsuario} onChange={this.cambioValorUser}></input>
                         </div>
 
-                        <div id="inputlog" className="form-label-group">
+                        <div id="inputlog2" className="form-label-group">
                             <input  type="password" id="inputPassword" className="form-control" placeholder="Contraseña" required value={this.state.valorPassword} onChange={this.cambioValorPass}></input>
                         </div>
            

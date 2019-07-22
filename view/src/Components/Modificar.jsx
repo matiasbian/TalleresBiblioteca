@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
 import GetTalleres from './Subcomponents/GetTalleres'
+import '../Style/Modificar.css'
 export default class Modificar extends React.Component{
 
     constructor(props){
@@ -27,10 +28,10 @@ export default class Modificar extends React.Component{
         return (
             <div className = "container">
                 <form onSubmit={this.enviar}>
-                    <h1>Modificar inscripto</h1>
+                    <center><h1 id="titulomod">Modificar inscripto</h1></center>
                     <div className="form-inline my-2 my-lg-0">
                         <input onChange={this.actualizarValores} name = "buscar" className="form-control mr-sm-2" type="search" placeholder="Introduzca n° de legajo" aria-label="Search"></input>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="reset" onClick={this.buscar}>Buscar</button>
+                        <button id="buscarmod"  className="btn btn-success" type="reset" onClick={this.buscar}>Buscar</button>
                     </div>
                     <div className="form-group">
                         <div className="form-group">
@@ -67,7 +68,7 @@ export default class Modificar extends React.Component{
                         <input onChange={this.actualizarValores} value = {this.state.edad} name="edad" type="number" className="form-control" id="inputEdad"></input>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Modificar</button>
+                    <button id="buttonmod" type="submit" className="btn btn-primary btn-lg btn-block">Modificar</button>
                 </form>
             </div>
           );

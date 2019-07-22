@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
 import GetTalleres from './Subcomponents/GetTalleres';
+import '../Style/Agregar.css'
 export default class Agregar extends React.Component{
 
     constructor(props){
@@ -25,7 +26,7 @@ export default class Agregar extends React.Component{
         return (
             <div className = "container">
                 <form onSubmit={this.enviar}>
-                    <h1>Agregar inscripto</h1>
+                    <center><h1>Agregar inscripto</h1></center>
                     <div className="form-group">
                         <div className="form-group">
                             <label htmlFor="inputLegajo">N° Legajo</label>
@@ -60,7 +61,7 @@ export default class Agregar extends React.Component{
                         <input onChange={this.actualizarValores} name="edad" type="number" className="form-control" id="inputEdad"></input>
                         </div>
                     </div>
-                    <button type="submit" className="btn btn-primary">Agregar</button>
+                    <button id="buttonag" type="submit" className="btn btn-primary btn-lg btn-block">Agregar</button>
                 </form>
             </div>
           );

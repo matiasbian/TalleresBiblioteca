@@ -6,6 +6,7 @@ import NavBar from './NavBar'
 import GetTalleres from './Subcomponents/GetTalleres';
 import ContainerComprobantes from './Subcomponents/ContainerComprobantes';
 import PrintProvider, { Print, NoPrint } from 'react-easy-print';
+import '../Style/Comprobantes.css'
 export default class Comprobantes extends React.Component{
 
     constructor(props){
@@ -31,12 +32,13 @@ export default class Comprobantes extends React.Component{
         return (
             <PrintProvider>
                 <div className = "container">
-                    <h1>Comprobantes</h1>
+                    <center><h1>Comprobantes</h1></center>
                     <NoPrint>
-                        <div className="form-inline my-2 my-lg-0">
+                        <div id="divcomp" className="form-inline my-2 my-lg-0">
                             <input id="busqueda" onChange={this.actualizarValores} name = "buscar" className="form-control mr-sm-2" type="search" placeholder="Introduzca n° de legajo" aria-label="Search"></input>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="reset" onClick={this.buscar}>Buscar</button>
+                            <button className="btn btn-success" type="reset" onClick={this.buscar}>Buscar</button>
                         </div>
+                        <br></br>
                    </NoPrint>
                    <ContainerComprobantes datos={this.state}></ContainerComprobantes>
                    <Print printOnly>
@@ -44,7 +46,9 @@ export default class Comprobantes extends React.Component{
                    </Print>
                    
                     <NoPrint>
-                            <button type="button" className="btn btn-primary" onClick={ window.print}>Imprimir</button>
+                            <br></br>
+                            <br></br>
+                            <button id="imprimircomp" type="button" className="btn btn-primary btn-lg btn-block" onClick={ window.print}>Imprimir</button>
                     </NoPrint>
                 </div>
             </PrintProvider>

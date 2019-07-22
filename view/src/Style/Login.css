@@ -1,5 +1,5 @@
 body{
-    background-color: cornflowerblue
+    background-color: rgb(148, 184, 255)
 }
 
 #titulo{
@@ -8,11 +8,15 @@ body{
 }
 #sublog{
     font-size: 160%;
-    padding-bottom: 5%;
+    padding-bottom: 8%;
 }
 
 #inputlog{
     padding-bottom: 5%;
+}
+
+#inputlog2{
+    padding-bottom: 10%;
 }
 #cardlog{
     border-radius: 5%;

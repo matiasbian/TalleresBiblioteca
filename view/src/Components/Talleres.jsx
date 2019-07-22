@@ -27,8 +27,9 @@ export default class Talleres extends React.Component{
                     <NoPrint>
                         <div className="form-inline my-2 my-lg-0">
                             <GetTalleres func={this.actualizarValores} valor="0"></GetTalleres>
-                            <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={this.buscar}>Buscar</button>
+                            <button className="btn btn-success" type="button" onClick={this.buscar}>Buscar</button>
                         </div>
+                        <br></br>
                     </NoPrint>
                     <Print printOnly>
                         <h2>{ "Taller de " + this.state.taller }</h2>
