@@ -1,3 +1,7 @@
+body{
+    background-color: cornflowerblue
+}
+
 #titulo{
     font-size: 300%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
@@ -13,5 +17,6 @@
 #cardlog{
     border-radius: 5%;
     border-color: black;
-    border-style: inset
+    border-style: inset;
+    
 }
