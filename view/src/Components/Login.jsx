@@ -3,7 +3,7 @@ import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import cookie from 'react-cookies'
-
+import '../Style/Login.css'
 export default class Login extends React.Component{
 
     constructor(props){
@@ -49,19 +49,17 @@ export default class Login extends React.Component{
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div className="card card-signin my-5">
                     <div className="card-body">
-                        <h5 className="card-title text-center">Ingresar</h5>
+                        <h5 id="sublog" className="card-title text-center">Ingresar</h5>
                         <form className="form-signin" onSubmit={this.enviar}>
-                        <div className="form-label-group">
-                            <input type="text" id="inputEmail" className="form-control" placeholder="Usuario" required autoFocus value={this.state.valorUsuario} onChange={this.cambioValorUser}></input>
-                            <label htmlFor="inputEmail">Usuario</label>
+                        <div id="inputlog" className="form-label-group">
+                            <input id="inputlog" type="text" id="inputEmail" className="form-control" placeholder="Usuario" required autoFocus value={this.state.valorUsuario} onChange={this.cambioValorUser}></input>
                         </div>
 
-                        <div className="form-label-group">
-                            <input type="password" id="inputPassword" className="form-control" placeholder="Contraseña" required value={this.state.valorPassword} onChange={this.cambioValorPass}></input>
-                            <label htmlFor="inputPassword">Contraseña</label>
+                        <div id="inputlog" className="form-label-group">
+                            <input  type="password" id="inputPassword" className="form-control" placeholder="Contraseña" required value={this.state.valorPassword} onChange={this.cambioValorPass}></input>
                         </div>
            
-                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Sign in</button>
+                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value ="Submit">Ingresar</button>
                         <hr className="my-4"></hr>
                         </form>
                     </div>
