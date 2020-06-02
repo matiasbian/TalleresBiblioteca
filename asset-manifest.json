@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TalleresBiblioteca/static/css/main.2e7b5a84.chunk.css",
+    "main.js": "/TalleresBiblioteca/static/js/main.9da52bc4.chunk.js",
+    "main.js.map": "/TalleresBiblioteca/static/js/main.9da52bc4.chunk.js.map",
+    "runtime~main.js": "/TalleresBiblioteca/static/js/runtime~main.edc22757.js",
+    "runtime~main.js.map": "/TalleresBiblioteca/static/js/runtime~main.edc22757.js.map",
+    "static/js/2.98b8a772.chunk.js": "/TalleresBiblioteca/static/js/2.98b8a772.chunk.js",
+    "static/js/2.98b8a772.chunk.js.map": "/TalleresBiblioteca/static/js/2.98b8a772.chunk.js.map",
+    "index.html": "/TalleresBiblioteca/index.html",
+    "precache-manifest.e1cd1d34d34eccf7264d9aae727a9290.js": "/TalleresBiblioteca/precache-manifest.e1cd1d34d34eccf7264d9aae727a9290.js",
+    "service-worker.js": "/TalleresBiblioteca/service-worker.js",
+    "static/css/main.2e7b5a84.chunk.css.map": "/TalleresBiblioteca/static/css/main.2e7b5a84.chunk.css.map"
+  }
+}
